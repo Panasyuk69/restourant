@@ -5,10 +5,21 @@ from django.shortcuts import render
 
 def index(request):
     context: dict[str, str] = {
-        'title': 'Home',
-        'content': 'Главная страница - HOME',
+        'title': 'Ресторан 52',
+        'content': 'Ресторан мировой кухни 52',
     }
     return render (request, 'main/index.html', context)
 
 def about(request):
-    return render (request, 'main/about.html')
+    context: dict[str, str] = {
+        'title': 'Ресторан 52 - О нас',
+        'content': 'О нас',
+        'text_page': 'потом',
+    }
+    return render (request, 'main/about.html', context)
+
+def catalog(request):
+    return render (request, 'main/goods/catalog.html')
+
+def product(request):
+    return render (request, 'main/goods/product.html')
