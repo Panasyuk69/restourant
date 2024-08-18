@@ -44,6 +44,7 @@
                                 <li><a class="dropdown-item  text-white" href="{% url "restourant:about" %}">Про нас</a></li>
                             </ul>
                         </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link  text-white" href="carts/cart.html">Корзина</a>
                         </li>
@@ -59,7 +60,7 @@
                                 <li><a class="dropdown-item  text-white" href="carts/cart.html">Корзина</a></li>
                                 <li><a class="dropdown-item  text-white" href="users/profile.html">Личный кабинет</a>
                                 </li>
-                                <li><a class="dropdown-item  text-white" href="#">Админ панель</a></li>
+                                <li><a class="dropdown-item  text-white" href=/admin>Админ панель</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -67,10 +68,21 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success text-white" type="submit">Поиск</button>
-                    </form>
+                    <div class="dropdown mb-2"></div>
+                        <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            МЕНЮ
+                        </button>
+                        <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
+                            <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Все товары</a></li>
+                            <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">re[yz</a></li>
+                            <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Спальня</a></li>
+                            <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Гостинная</a></li>
+                            <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Офис</a></li>
+                            <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Фурнитура</a></li>
+                            <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Декор</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -80,35 +92,7 @@
             <!-- Каталог и корзина с фиксированным расположением на странице -->
             <div class="row mt-1 position-fixed z-3">
                 <!-- Каталог -->
-                <div class="dropdown mb-2">
-                    <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        МЕНЮ
-                        <img class="mx-1" src="{% static "deps/icons/grid-fill.svg" %}" alt="Catalog Icon" width="24"
-                            height="24">
-                    </button>
-                    <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Все товары</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Пицца</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Завтраки</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Детское меню</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Паста</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Ролы</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Гарячие ролы</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Запеченые ролы</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Салаты</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Супы</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Гарячие блюда</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Мангал</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Рыба и море продукты</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Холодные закуски</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Десерты</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Бургеры</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Гарнир</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Бар</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "restourant:catalog" %}">Вино</a></li>
-                    </ul>
-                </div>
+                
                 <!-- Значек корзины, вызывает модальное окно -->
                 <div>
                     <button type="button" class="btn btn-dark btn-secondary d-flex" id="modalButton"
@@ -118,6 +102,7 @@
                         <span id="goods-in-cart-count">0</span>
                     </button>
                 </div>
+
                 <!-- Разметка модального окна корзины -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
@@ -199,6 +184,9 @@
             </div>
         </div>
     </section>
+
+
+    
     {% block footer %}
 
     {% endblock footer %}

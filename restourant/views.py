@@ -18,8 +18,8 @@ def about(request):
     }
     return render (request, 'main/about.html', context)
 
-def catalog(request):
-    return render (request, 'main/goods/catalog.html')
-
 def product(request):
-    return render (request, 'main/goods/product.html')
+    return render(request, 'main/product.html')
+
+def catalog(request):
+    return render(request, 'main/catalog.html')
