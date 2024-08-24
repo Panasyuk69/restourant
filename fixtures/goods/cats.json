@@ -1,0 +1,114 @@
+[
+    {
+        "model": "goods.categories",
+        "pk": 3,
+        "fields": {
+            "name": "������ ����",
+            "slug": "all"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 4,
+        "fields": {
+            "name": "����",
+            "slug": "myaso"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 5,
+        "fields": {
+            "name": "������",
+            "slug": "salaty"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 6,
+        "fields": {
+            "name": "�����",
+            "slug": "picca"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 7,
+        "fields": {
+            "name": "����",
+            "slug": "sushi"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 8,
+        "fields": {
+            "name": "�������",
+            "slug": "burgery"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 9,
+        "fields": {
+            "name": "��������",
+            "slug": "zavtraki"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 10,
+        "fields": {
+            "name": "�����",
+            "slug": "obedy"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 11,
+        "fields": {
+            "name": "�����",
+            "slug": "uzhiny"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 12,
+        "fields": {
+            "name": "����������� �����",
+            "slug": "francuzskaya-kuhnya"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 13,
+        "fields": {
+            "name": "���������� �����",
+            "slug": "ukrainskaya-kuhnya"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 14,
+        "fields": {
+            "name": "��������� �����",
+            "slug": "ispanskaya-kuhnya"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 15,
+        "fields": {
+            "name": "��������",
+            "slug": "alkogol"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 16,
+        "fields": {
+            "name": "������ �����",
+            "slug": "vinnaya-karta"
+        }
+    }
+]

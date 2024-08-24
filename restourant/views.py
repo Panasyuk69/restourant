@@ -1,25 +1,22 @@
-from django.http import HttpResponse
 from django.shortcuts import render
-
+from goods.models import Categories
 # Create your views here.
 
 def index(request):
-    context: dict[str, str] = {
+
+    categories = Categories.objects.all()
+
+    context = {
         'title': 'Ресторан 52',
         'content': 'Ресторан мировой кухни 52',
+        'categories': categories
     }
-    return render (request, 'main/index.html', context)
+    return render(request, 'main/index.html', context) 
 
 def about(request):
-    context: dict[str, str] = {
-        'title': 'Ресторан 52 - О нас',
+    context = {
         'content': 'О нас',
-        'text_page': 'потом',
+        'text_page': 'бла-бла-бла',
     }
-    return render (request, 'main/about.html', context)
+    return render(request, 'main/about.html', context)
 
-def product(request):
-    return render(request, 'main/product.html')
-
-def catalog(request):
-    return render(request, 'main/catalog.html')
