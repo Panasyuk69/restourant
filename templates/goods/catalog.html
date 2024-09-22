@@ -28,7 +28,7 @@
                     {% if product.discount%}
                         <p><s>{{ product.price }}</s> грн</p>
                         <p><strong>{{ product.total_price }} грн</strong></p>
-                        <span class="badge bg-warning text-dark">Скидка {{ product.discount }}</span>
+                        <p class="badge bg-warning text-dark">Скидка {{ product.discount }}</p>
                     {% else %}
                         <p><strong>{{ product.price }} грн</strong></p>
                     {% endif %}
@@ -43,13 +43,42 @@
     </div>
     {% endfor %}
 
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item {% if not goods.has_previous %}disabled{% endif %}">
+                <a class="page-link" href="{% if goods.has_previous %}
+                {% url 'goods:catalog' slug_url goods.previous_page_number %}
+                {% else %}
+                #
+                {% endif %}
+                " aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only"></span>
+                </a>
+            </li>
+            {% for page in goods.paginator.page_range%}
+            {% if page >= goods.number|add:-2 and page <= goods.number|add:2 %}
+            <li class="page-item {% if goods.number == page %}active{% endif %}"><a class="page-link" href="{% url 'goods:catalog' slug_url page %}">{{ page }}</a></li>
+            {% endif %}
+            {% endfor %}
+          
+            <li class="page-item {% if not goods.has_next %}disabled{% endif %}">
+                <a class="page-link" href="{% if goods.has_next %}
+                {% url 'goods:catalog' slug_url goods.next_page_number %}
+                {% else %}
+                #
+                {% endif %}
+                " aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
 {% endblock content %}
 
 
 {% block footer %}
-<footer class="py-1 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Home Python Hub Studio 2023</p>
-    </div>
-</footer>
+
 {% endblock footer %}
