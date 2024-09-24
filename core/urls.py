@@ -24,7 +24,8 @@ from core import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('restourant.urls', namespace='restourant')),
-    path('goods/', include('goods.urls', namespace='goods'))
+    path('goods/', include('goods.urls', namespace='goods')),
+    path('user/', include('users.urls', namespace='user')),
 ] 
 
 if settings.DEBUG:
